@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Encryptor</title>
+</head>
+<body>
+    <h2>Encrypt Text</h2>
+    <form action="/encrypt_text" method="post">
+        <textarea name="text" required></textarea><br>
+        <input type="password" name="password" placeholder="Enter Password" required><br>
+        <button type="submit">Encrypt Text</button>
+    </form>
+
+    <h2>Decrypt Text</h2>
+    <form action="/decrypt_text" method="post">
+        <textarea name="text" required></textarea><br>
+        <input type="password" name="password" placeholder="Enter Password" required><br>
+        <button type="submit">Decrypt Text</button>
+    </form>
+
+    <h2>Encrypt File</h2>
+    <form action="/encrypt_file" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required><br>
+        <input type="password" name="password" placeholder="Enter Password" required><br>
+        <button type="submit">Encrypt File</button>
+    </form>
+
+    <h2>Decrypt File</h2>
+    <form action="/decrypt_file" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required><br>
+        <input type="password" name="password" placeholder="Enter Password" required><br>
+        <button type="submit">Decrypt File</button>
+    </form>
+</body>
+</html>
