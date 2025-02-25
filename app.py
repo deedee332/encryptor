@@ -95,8 +95,17 @@ def decrypt_file_route():
 
 if __name__ == '__main__':
     app.run(debug=True)
-import os
+from flask import Flask, render_template
 
+app = Flask(__name__)
+
+# Your routes go here
+@app.route('/')
+def home():
+    return "Hello, this is the encryption website!"
+
+# This must be at the bottom of the file
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Use Render's assigned PORT or default to 5000
-    app.run(debug=True, host='0.0.0.0', port=port)
+    import os
+    port = int(os.environ.get('PORT', 5000))  # Render provides a PORT environment variable
+    app.run(debug=False, host='0.0.0.0', port=port)
